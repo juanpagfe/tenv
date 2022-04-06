@@ -1,0 +1,19 @@
+#!/bin/bash
+
+make build
+HOSTS=$@
+
+for host in "${HOSTS[@]}"; do
+  ARCHIVE_NAME=tenv.tar.gz
+  scp $ARCHIVE_NAME $host:/tmp
+  
+  ssh $host -T <<ENDSSH
+cd /tmp
+tar -zxvf tenv.tar.gz
+cd tenv
+make install
+cd ..
+#rm -rf tenv
+#rm tenv.tar.gz
+ENDSSH
+done
