@@ -2,12 +2,19 @@
 
 ###############################################################################################
 #                                                                                             #
-#                                        PERSONAL ALIASES                                     #
+#                                        PERSONAL ENV                                         #
 #                                                                                             #
 ###############################################################################################
 
 HUGO_SUPPORTED_LANGUAGES=("en" "es")
 EMOTIONS_TEMPLATE=/home/jpgarcia/journals/templates/emotion.txt
+
+###############################################################################################
+#                                                                                             #
+#                                        PERSONAL ALIASES                                     #
+#                                                                                             #
+###############################################################################################
+
 alias hpost="hcontent posts"
 alias hproject="hcontent projects"
 alias emotion="jrnl emotions < $EMOTIONS_TEMPLATE && jrnl emotions -1 --edit"
